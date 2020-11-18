@@ -5,7 +5,7 @@ import { GrpcMethod } from '@nestjs/microservices';
 @Controller()
 export class AppController {
   @GrpcMethod('CustomHelloService', 'GetCustomHello')
-  getCustomHello(data: string) {
-    return { reply: `Hello ${data}!` };
+  getCustomHello(data: any) {
+    return { reply: `Hello ${data.data}!` };
   }
 }
